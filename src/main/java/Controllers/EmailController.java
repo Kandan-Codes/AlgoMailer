@@ -12,7 +12,9 @@ import java.sql.SQLException;
 public class EmailController {
     @FXML private JFXTextField emailField;
     @FXML private JFXButton subscribeButton;
-
+    /*
+    @Subscribtion handling: handling the user interaction activities through fxml file
+    */
     @FXML
     public void handleSubscribe() throws SQLException {
         String recipientEmail = emailField.getText().trim();
@@ -34,6 +36,9 @@ public class EmailController {
 
     }
 
+    /*
+    @Validate: Validate the user emails
+    */
     private static boolean isValidEmail(String recipientEmail) {
         String emailRegex = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[a-zA-Z]{2,}$";
         return recipientEmail.matches(emailRegex);
